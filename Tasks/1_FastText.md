@@ -16,8 +16,8 @@
 2. Скачать [модель поменьше](https://s3-us-west-1.amazonaws.com/fasttext-vectors/wiki-news-300d-1M-subword.vec.zip) или [модель побольше](https://s3-us-west-1.amazonaws.com/fasttext-vectors/wiki.en.zip) — в зависимости от доступных ресурсов.
 3. Первую модель грузить так:
 ```python
-from gensim.models.wrappers import FastText
-model = FastText.load_word2vec_format('FILENAME.vec')
+from gensim.models import KeyedVectors
+model = KeyedVectors.load_word2vec_format('FILENAME.vec', limit=999999)
 ```
 4. Вторую:
 ```python
